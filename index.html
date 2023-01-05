@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/68fce3ddb4.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&family=PT+Mono&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="search-form">
+        <div class="row">
+          <div class="col-8">
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Enter a city..."
+                class="form-control"
+                id="search-city"
+              />
+            </div>
+          </div>
+          <div class="col-2">
+            <input type="submit" value="search" class="btn" />
+          </div>
+          <div class="col-2">
+            <input type="submit" value="Current" class="location" id="location" />
+          </div>
+        </div>
+      </form>
+
+      <div class="row">
+        <div class="col-7">
+          <div class="temperature-large">
+            <span id="degree"> </span>
+            <span class="units">
+              <a href="#" class="celcius" id="celcius-link">°C </a
+              ><span class="verticalLine">|</span>
+              <a href="#" class="fahrenheit" id="fahrenheit-link">°F</a>
+            </span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="city-name" id="name-city"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-7">
+          <i class="fa-solid fa-cloud cloud-icon"></i>
+        </div>
+        <div class="col">
+          <div class="extrainfo" id="precipitation">Precipitation: 80%</div>
+          <div class="extrainfo" id="humidity"></div>
+          <div class="extrainfo" id="wind"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-5">
+          <h2>cloudy</h2>
+        </div>
+        <div class="col">
+          <div class="enjoy-weather">Enjoy this beautiful cloudy day!</div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-5 time">
+          <div>
+            <i class="fa-regular fa-clock"></i>
+            <span id="current-time"> 10:54 </span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="dates">
+            <i class="fa-regular fa-calendar"></i>
+            <span id="date"> Wednesday, November 24, 2022 </span>
+          </div>
+        </div>
+      </div>
+      <hr style="width: 100%" align="left" color="#E4ECEF" class="hr" />
+
+      <div class="row">
+        <div class="col-sm-2 weather-button">
+          <div class="forecast-day">Fri</div>
+          <br />
+          <div class="forecast-icon">
+            <i class="fa-solid fa-cloud-bolt"></i>
+          </div>
+          <div class="forecast-temperature">
+            <span>25° </span>
+            <span class="forecast-temperature-min"> 17°</span>
+          </div>
+        </div>
+        <div class="col-sm-2 weather-button">
+          <div class="forecast-day">Sut</div>
+          <br />
+          <div class="forecast-icon">
+            <i class="fa-solid fa-cloud-bolt"></i>
+          </div>
+          <div class="forecast-temperature">
+            <span>25°</span>
+            <span class="forecast-temperature-min">17°</span>
+          </div>
+        </div>
+        <div class="col-sm-2 weather-button">
+          <div class="forecast-day">Sun</div>
+          <br />
+          <div class="forecast-icon">
+            <i class="fa-solid fa-cloud-bolt"></i>
+          </div>
+          <div class="forecast-temperature">
+            <span>25°</span>
+            <span class="forecast-temperature-min">17°</span>
+          </div>
+        </div>
+        <div class="col-sm-2 weather-button">
+          <div class="forecast-day">Mon</div>
+          <br />
+          <div class="forecast-icon">
+            <i class="fa-solid fa-cloud-bolt"></i>
+          </div>
+          <div class="forecast-temperature">
+            <span>25°</span>
+            <span class="forecast-temperature-min">17°</span>
+          </div>
+        </div>
+        <div class="col-sm-2 weather-button">
+          <div class="forecast-day">Tue</div>
+          <br />
+          <div class="forecast-icon">
+            <i class="fa-solid fa-cloud-bolt"></i>
+          </div>
+          <div class="forecast-temperature">
+            <span>25°</span>
+            <span class="forecast-temperature-min">17°</span>
+          </div>
+        </div>
+      </div>
+      <hr style="width: 25%" align="left" color="#E4ECEF" class="half-hr" />
+      <div class="footer">Coded by Asieh Kalantar</div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
