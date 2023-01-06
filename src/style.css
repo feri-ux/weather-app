@@ -170,5 +170,9 @@ h2 {
 }
 
 a {
-  color: #ffcab0;
+  color: #ffba98;
+}
+
+a:hover {
+  color: white;
 }
