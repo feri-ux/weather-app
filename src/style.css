@@ -66,6 +66,7 @@ h2 {
 .celcius {
   color: white;
 }
+
 .fahrenheit {
   color: white;
 }
@@ -170,10 +171,25 @@ h2 {
   font-weight: 100;
 }
 
-a {
+.footer a {
   color: #ffba98;
 }
 
 a:hover {
   color: white;
+}
+
+.temperature-large .celcius {
+  color: #ffcab0;
+  text-decoration: none;
+  cursor: default;
+}
+
+.temperature-large a {
+  color: white;
+  text-decoration: none;
+}
+
+.temperature-large .celcius:hover {
+  text-decoration: none;
 }
