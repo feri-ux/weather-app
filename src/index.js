@@ -1,46 +1,47 @@
-let currentTime = new Date();
+function formatDate(timestamp) {
+  let currentTime = new Date(timestamp);
+  let currentHour = currentTime.getHours();
+  if (currentHour < 10) {
+    currentHour = `0${currentHour}`;
+  }
+  let currentMinute = currentTime.getMinutes();
+  if (currentMinute < 10) {
+    currentMinute = `0${currentMinute}`;
+  }
 
-let currentHour = currentTime.getHours();
-if (currentHour < 10) {
-  currentHour = `0${currentHour}`;
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let currentDay = days[currentTime.getDay()];
+  let currentMonth = months[currentTime.getMonth()];
+  let currentDate = currentTime.getDate();
+  let currentYear = currentTime.getUTCFullYear();
+
+  let date = document.querySelector("#date");
+  date.innerHTML = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
+
+  return `${currentHour}:${currentMinute}`;
 }
-let currentMinute = currentTime.getMinutes();
-if (currentMinute < 10) {
-  currentMinute = `0${currentMinute}`;
-}
-let time = document.querySelector("#current-time");
-time.innerHTML = `${currentHour}:${currentMinute}`;
-
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let currentDay = days[currentTime.getDay()];
-let currentMonth = months[currentTime.getMonth()];
-let currentDate = currentTime.getDate();
-let currentYear = currentTime.getUTCFullYear();
-
-let date = document.querySelector("#date");
-date.innerHTML = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
 
 function searchCity(event) {
   event.preventDefault();
@@ -73,6 +74,16 @@ function showTemprature(response) {
   let wind = document.querySelector("#wind");
   let windSpeed = Math.round(response.data.wind.speed);
   wind.innerHTML = `Wind: ${windSpeed} Km/h`;
+
+  let currentTimeElement = document.querySelector("#current-time");
+  currentTimeElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function showposition(position) {
