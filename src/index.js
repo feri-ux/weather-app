@@ -43,6 +43,25 @@ function formatDate(timestamp) {
   return `${currentHour}:${currentMinute}`;
 }
 
+let forecastElement = document.querySelector("#forecast");
+forecastElement.innerHTML = "forecast"
+
+`<div class="row">
+  <div class="col-sm-2 weather-button">
+    <div class="forecast-day">Fri</div>
+    <br />
+    <img
+      src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+      alt=""
+      width="52"
+    />
+    <div class="forecast-temperature-max">
+      <span>25° </span>
+      <span class="forecast-temperature-min"> 17°</span>
+    </div>
+  </div>
+</div>`;
+
 function showTemprature(response) {
   let city = document.querySelector("#name-city");
   city.innerHTML = response.data.name;
