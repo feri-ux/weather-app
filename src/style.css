@@ -34,12 +34,14 @@ h2 {
   padding-right: 12px;
   padding-left: 12px;
 }
+
 .location {
   border: none;
   padding-top: 7px;
   padding-bottom: 7px;
   border-radius: 4px;
 }
+
 .temperature-large {
   font-family: "Inter Tight", sans-serif;
   font-size: 55px;
@@ -57,6 +59,7 @@ h2 {
   position: relative;
   bottom: 20px;
 }
+
 .verticalLine {
   font-size: 17px;
   position: relative;
@@ -95,7 +98,7 @@ h2 {
   color: #ffcab0;
   position: relative;
   top: 5px;
-  right: -12px;
+  right: -70px;
 }
 
 .time {
@@ -116,10 +119,12 @@ h2 {
 
 .weather-button {
   border: 1px solid transparent;
-  background-color: #eff3f4;
+  background-color: #e1eaee;
   max-width: 80px;
   border-radius: 5px;
   margin: 5px 17px;
+  padding-left: 0 auto;
+  text-align: center;
 }
 
 .weather-button:hover {
@@ -132,10 +137,7 @@ h2 {
   text-align: center;
   margin-top: 10px;
   color: #142d4c;
-}
-
-.forecast-day {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 30px;
   margin-bottom: 12px;
@@ -147,17 +149,30 @@ h2 {
   text-align: center;
 }
 
-.forecast-temperature-max {
-  font-size: 14px;
-  font-weight: 700;
-  font-family: "Inter Tight", sans-serif;
+.forecast-temperatures {
+  font-size: 13px;
   color: #142d4c;
   text-align: center;
   line-height: 40px;
+  font-family: "Inter Tight", sans-serif;
+}
+
+.icon {
+  display: block;
+}
+
+.weather-forcast {
+  text-align: center;
+}
+
+.forecast-temperature-max {
+  font-weight: 500;
+  text-align: center;
 }
 
 .forecast-temperature-min {
   font-weight: 400;
+  opacity: 0.6;
 }
 
 .half-hr {
@@ -172,7 +187,7 @@ h2 {
 }
 
 .footer a {
-  color: #ffba98;
+  color: #ffcab0;
 }
 .footer a:hover {
   text-decoration: white;
