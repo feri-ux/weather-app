@@ -124,6 +124,11 @@ function showTemprature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   getForcast(response.data.coord);
+
+  celsiusTemperature = response.data.main.temp;
+
+  let enjoyElement = document.querySelector("#enjoy");
+  enjoyElement.innerHTML = "Enjoy this beautiful day!";
 }
 
 function search(city) {
